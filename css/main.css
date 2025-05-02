@@ -1,0 +1,822 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, ".SFNSText-Regular", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: #ccc;
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #56c080;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 30px;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
+}
+
+/* Place CSS styles here */
+
+/* Add a black background color to the top navigation */
+.monday-soap {
+  background-color: #333;
+}
+
+@media (min-width: 481px) {
+  .monday-soap {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Style the links inside the navigation bar */
+.monday-soap a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.monday-soap a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.monday-soap a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Hide the link that should open and close the monday-soap on small screens */
+.monday-soap .icon {
+  display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the monday-soap (.icon) */
+@media (max-width: 480px) {
+  .monday-soap {
+    justify-content: space-between;
+  }
+  .monday-soap a:not(:first-child) {display: none;}
+  .monday-soap a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the monday-soap with JavaScript when the user clicks on the icon. This class makes the monday-soap look good on small screens (display the links vertically instead of horizontally) */
+@media (max-width: 480px) {
+  .monday-soap.responsive {position: relative;}
+  .monday-soap.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .monday-soap.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.l-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}
+
+body {
+  color: #000;
+  background-color: #efefef;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 16px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+/* media query for phones */
+@media (max-width: 480px) {
+  body {
+    background-color: teal;
+  }
+}
+
+/* media query for desktop */
+@media (min-width: 768px) {
+  body {
+    background-color: peachpuff;
+  }
+}
+
+label {
+  color: rgb(0, 0, 0);
+}
+
+p {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto Slab', serif;
+  text-transform: uppercase;
+}
+
+input,
+textarea {
+  border: 1px solid #c4c3c3;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+form {
+  /* max-width: 500px; */
+  display: block;
+  /* width: 80%; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.active {
+  background-color: #00c200;
+}
+
+ul {
+  text-align: center;
+}
+
+img {
+ width: 100%;
+ height: auto;
+}
+
+h2 {
+  color: rgb(135, 17, 135);
+}
+
+p {
+  color: #00c200;
+}
+
+nav a,
+.my-button {
+  display: inline-flex;
+  padding: 16px;
+  border: 1px solid white;
+  color: #a52a2a;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-decoration: none;
+  transition: all .25s ease;
+  width: auto;
+}
+
+nav a:hover,
+.my-button:hover {
+  color: white;
+  background-color: #ffc0cb;
+}
+
+.my-secondary-button {
+  background-color: #00c200;
+  color: #000;
+}
+
+.my-secondary-button:hover {
+  color: #00c200;
+  background-color: #000;
+}
+
+.koala-paragraph {
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+.koala-featured-image-wrapper {
+  text-align: center;
+  color: #037030;
+  font-weight: 700;
+}
+
+.koala-featured-image-wrapper img {
+  border: 4px solid red;
+  max-width: 800px;
+}
+
+.koala-featured-image-image {
+  border: 4px solid #00c200;
+}
+
+
+/* Lavendar Chicken section */
+.lavendar-chicken-main-wrapper,
+.yellow-pig-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.lavendar-chicken-header,
+.yellow-pig-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffa500;
+}
+
+@media (max-width: 767px) {
+  .lavendar-chicken-header,
+  .yellow-pig-header {
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+.lavendar-chicken-featured-wrapper,
+.yellow-pig-featured-wrapper {
+  display: flex;
+  background-color: #800080;
+}
+
+.lavendar-chicken-main,
+.yellow-pig-main {
+  flex: 1;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.orange-ferret-default-wrapper {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.orange-ferret-default-image {
+  width: 300px;
+}
+
+.lavendar-chicken-footer,
+.yellow-pig-footer {
+  background-color: #ffc0cb
+}
+
+.lavendar-chicken-feature-items,
+.yellow-pig-feature-items {
+  display: flex;
+  gap: 24px;
+}
+
+/* for phone */
+@media (max-width: 767px) {
+  .lavendar-chicken-feature-items,
+  .yellow-pig-feature-items {
+    flex-direction: column;
+  }
+}
+
+.lavendar-chicken-feature-item,
+.yellow-pig-feature-item {
+  background-color: floralwhite
+}
+
+.yellow-pig-logo {
+  width: 90px;
+}
+
+/* Gold pineapple */
+.gold-pineapple-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  background-color: peachpuff;
+}
+
+@media (max-width: 480px) {
+  .gold-pineapple-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.gold-pineapple-logo {
+  max-width: 90px;
+}
+
+@media (max-width: 480px) {
+  .aqua-turtle-main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.gold-pineapple-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.55), 
+      rgba(0, 0, 0, 0.55)
+    ),
+    url(../img/pink-bg.jpeg);
+  /* needed to make background flexible */
+  background-size: cover;
+  background-position: left;
+}
+
+.gold-pineapple-hero h1  {
+  color: white;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Style the form element with a border around it */
+.gold-pineapple-form {
+  /* border: 4px solid #f1f1f1; */
+}
+
+/* Add some padding and a grey background color to containers */
+.gold-pineapple-container {
+  padding: 20px;
+}
+
+.gold-pineapple-label-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Style the input elements and the submit button */
+.gold-pineapple-form input[type=text], 
+.gold-pineapple-form input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Add margins to the checkbox */
+.gold-pineapple-form input[type=checkbox] {
+  margin-top: 16px;
+  width: auto;
+}
+
+.gold-pineapple-feature-content-wrapper {
+  background-color: lightskyblue;
+}
+
+.gold-pineapple-feature-content {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gold-pineapple-feature-content p {
+  color: #000;
+}
+
+.gold-pineapple-feature-items {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+
+
+.orange-ferret-body p {
+  color: #000;
+}
+
+.orange-ferret-body ul {
+  text-align: left;
+}
+
+.orange-ferret-featured-item-image-wrapper {
+  width: 50%;
+}
+
+@media (max-width: 480px) {
+  .orange-ferret-featured-item-image-wrapper {
+    width: 100%
+  }
+}
+
+
+.orange-ferret-featured-item-content {
+  width: 50%;
+}
+
+@media (max-width: 480px) {
+  .orange-ferret-featured-item-content {
+    width: 100%
+  }
+}
+
+.orange-ferret-featured-item {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+@media (max-width: 480px) {
+  .orange-ferret-featured-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.orange-ferret-featured-item-quantity-wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.aqua-turtle-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .aqua-turtle-grid-container {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
+
+.aqua-turtle-flex-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .aqua-turtle-flex-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.aqua-turtle-column-container {
+  column-count: 3;
+  column-gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .aqua-turtle-column-container {
+   column-count: 1;
+   column-gap: 0;
+  }
+}
+
+.orange-ferret-default-title {
+  
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.55), 
+      rgba(0, 0, 0, 0.55)
+    ),
+    /* bottom, image */
+    url(../img/giz2.jpg);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 1px #000;
+  min-height: 50vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.active h1, 
+.active h2, 
+.active h3, 
+.active h4, 
+.active h5, 
+.active h6 {
+  text-shadow: 2px 2px 2px #00c200;
+  text-decoration: underline;
+} 
+
+.active .aqua-turtle-main h1, 
+.active .aqua-turtle-main h2, 
+.active .aqua-turtle-main h3, 
+.active .aqua-turtle-main h4, 
+.active .aqua-turtle-main h5, 
+.active .aqua-turtle-main h6 {
+  text-shadow: 2px 2px 2px #00c200;
+  text-decoration: underline;
+} 
+
+
+/* w3school slideshow section */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+/* the garbage carousel */
+
+#slider {
+  position: relative;
+  width: 50%;
+  height: 32vw;
+  margin: 150px auto;
+  font-family: 'Helvetica Neue', sans-serif;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+.second-slider input[type=radio] {
+  position: relative;
+  top: 108%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin: 0 15px 0 0;
+  opacity: 0.4;
+  transform: translateX(-83px);
+  cursor: pointer;
+}
+
+
+.second-slider input[type=radio]:nth-child(5) {
+  margin-right: 0px;
+}
+
+ .second-slider input[type=radio]:checked {
+  opacity: 1;
+}
+
+
+
+
+#slider label,
+#slider label img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 400ms ease;
+}
+
+
+
+/* Slider Functionality */
+
+/* Active Slide */
+#s1:checked ~ #slide1,
+ #s2:checked ~ #slide2,
+  #s3:checked ~ #slide3,
+   #s4:checked ~ #slide4,
+    #s5:checked ~ #slide5 {
+  box-shadow: 0 13px 26px rgba(0,0,0, 0.3), 0 12px 6px rgba(0,0,0, 0.2);
+  transform: translate3d(0%, 0, 0px);
+}
+
+/* Next Slide */
+#s1:checked ~ #slide2,
+ #s2:checked ~ #slide3,
+  #s3:checked ~ #slide4,
+   #s4:checked ~ #slide5,
+    #s5:checked ~ #slide1 {
+  box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
+  transform: translate3d(20%, 0, -100px);
+}
+
+
+/* Next to Next Slide */
+#s1:checked ~ #slide3,
+ #s2:checked ~ #slide4,
+  #s3:checked ~ #slide5,
+   #s4:checked ~ #slide1,
+    #s5:checked ~ #slide2 {
+  box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
+  transform: translate3d(40%, 0, -250px);
+}
+
+/* Previous to Previous Slide */
+#s1:checked ~ #slide4,
+#s2:checked ~ #slide5,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+  box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
+  transform: translate3d(-40%, 0, -250px);
+}
+
+/* Previous Slide */
+#s1:checked ~ #slide5,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2,
+#s4:checked ~ #slide3,
+#s5:checked ~ #slide4 {
+  box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
+  transform: translate3d(-20%, 0, -100px);
+}
