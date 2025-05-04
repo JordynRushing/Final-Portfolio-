@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Jordyn T. Rushing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+        }
+        
+        .logo {
+            width: 58px;
+            height: 70px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 40px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #666666;
+        }
+        
+        /* About Section Styles */
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            margin: 50px 0;
+        }
+        
+        .about-header {
+            display: flex;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            background-color: #000000;
+            border-radius: 7px;
+            padding: 0 20px;
+            margin-right: 40px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Tenor Sans', sans-serif;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 47px;
+        }
+        
+        .section-description {
+            max-width: 738px;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        
+        .about-content {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .bio-card {
+            background-color: #d15454;
+            border-radius: 20px;
+            padding: 40px;
+            color: #ffffff;
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .bio-text {
+            font-size: 24px;
+            line-height: 32px;
+            max-width: 70%;
+        }
+        
+        .bio-graphic {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25%;
+        }
+        
+        /* Reviews Section Styles */
+        .reviews-section {
+            margin: 100px 0;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .review-card {
+            background-color: #ffffff;
+            border: 1px solid #191a23;
+            border-radius: 45px;
+            padding: 40px 35px;
+            box-shadow: 0px 5px 0px #191a23;
+            display: flex;
+            flex-direction: column;
+            height: 387px;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .reviewer-img {
+            width: 102px;
+            height: 102px;
+            border-radius: 50%;
+            background-color: #e57373;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reviewer-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .reviewer-info {
+            margin-left: 20px;
+            flex-grow: 1;
+        }
+        
+        .reviewer-name {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .reviewer-title {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 18px;
+            line-height: 22px;
+            color: #000000;
+        }
+        
+        .social-icon {
+            width: 34px;
+            height: 34px;
+            background-color: #000000;
+            border-radius: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-icon img {
+            width: 17px;
+            height: 17px;
+        }
+        
+        .review-divider {
+            width: 100%;
+            height: 1px;
+            background-color: #000000;
+            margin: 20px 0;
+        }
+        
+        .review-text {
+            font-size: 18px;
+            line-height: 24px;
+            flex-grow: 1;
+        }
+        
+        .see-all-btn {
+            background-color: #191a23;
+            color: #ffffff;
+            border-radius: 14px;
+            padding: 20px 40px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            margin: 40px auto;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        
+        .see-all-btn:hover {
+            background-color: #333;
+        }
+        
+        /* Footer Styles */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+            margin-top: 50px;
+        }
+        
+        .footer-logo {
+            width: 63px;
+            height: 71px;
+        }
+        
+        .footer-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .footer-nav ul li {
+            margin-right: 40px;
+        }
+        
+        .footer-nav ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+        }
+        
+        .social-links a {
+            margin-left: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: #000000;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #333;
+        }
+        
+        .social-links img {
+            width: 15px;
+            height: 15px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .bio-text {
+                max-width: 100%;
+            }
+            
+            .bio-graphic {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .about-header {
+                flex-direction: column;
+            }
+            
+            .section-title {
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
+            
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .footer-nav ul {
+                flex-direction: column;
+                margin: 20px 0;
+            }
+            
+            .footer-nav ul li {
+                margin: 10px 0;
+            }
+            
+            .social-links {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <a href="Home.html">
+                <img src="../assets/images/img_clip_path_group.svg" alt="JR Logo" class="logo">
+            </a>
+            <!-- Remove homepage link from the navigation -->
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">About Me</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
+                    <li><a href="#">Client Reviews</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="about-header">
+                <div class="section-title">
+                    <h2>Learn About Me</h2>
+                </div>
+                <div class="section-description">
+                    <p>Bringing Ideas to Life Through Bold, Minimalist Design: Jordyn T. Rushing, a graphic designer and digital artist dedicated to crafting thoughtful, impactful visuals. Explore my portfolio to see how I blend creativity and strategy to create designs that inspire and connect.</p>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <div class="bio-card">
+                    <div class="bio-text">
+                        <p>Hi, I'm Jordyn T. Rushing — a passionate graphic designer, digital artist, and creative problem solver. I specialize in crafting modern, intuitive, and visually captivating designs that merge functionality with aesthetic appeal. My work embodies a dynamic blend of Minimalism, Typography-Centric Design, Pop Art, and Illustrative Elements, reflecting my diverse artistic influences and versatile skill set.</p>
+                        <br>
+                        <p>With experience in freelance and collaborations, such as my work with Alpha Resources, I've honed my expertise in cover art, ads, and logo graphics, delivering impactful visuals that leave a lasting impression. As a graphic design student at LSU, I'm continuously expanding my knowledge, pushing creative boundaries, and integrating innovative design solutions into my projects.</p>
+                        <br>
+                        <p>Beyond design, I'm deeply passionate about community engagement and uplifting other Black artists. I've volunteered for initiatives like LSU's Geaux Big event and love using my creative skills to make a positive impact.</p>
+                        <br>
+                        <p>When I'm not designing, you'll find me drawing, creating digital art, swimming, or capturing moments through photography. My portfolio is a reflection of my dedication to creativity, storytelling, and helping others bring their visions to life.</p>
+                        <br>
+                        <p>Let's collaborate and create something amazing together!</p>
+                    </div>
+                    <div class="bio-graphic">
+                        <img src="../assets/images/img_contact_block.svg" alt="Decorative graphic element">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="about-header">
+                <div class="section-title">
+                    <h2>Verified Reviews</h2>
+                </div>
+                <div class="section-description">
+                    <p>See verified sources and clients who have written reviews.</p>
+                </div>
+            </div>
+            
+            <div class="reviews-grid">
+                <!-- Review Card 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <img src="../assets/images/img_picture.png" alt="John Smith">
+                        </div>
+                        <div class="reviewer-info">
+                            <h3 class="reviewer-name">John Smith</h3>
+                            <p class="reviewer-title">CEO and Founder</p>
+                        </div>
+                        <div class="social-icon">
+                            <img src="../assets/images/img_linkedin_17x17.svg" alt="LinkedIn">
+                        </div>
+                    </div>
+                    <div class="review-divider"></div>
+                    <div class="review-text">
+                        <p>"Jordyn has an incredible eye for detail and transformed my vision into a stunning logo that exceeded all expectations."</p>
+                    </div>
+                </div>
+                
+                <!-- Review Card 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <img src="../assets/images/img_picture.png" alt="Jane Doe">
+                        </div>
+                        <div class="reviewer-info">
+                            <h3 class="reviewer-name">Jane Doe</h3>
+                            <p class="reviewer-title">Director of Operations</p>
+                        </div>
+                        <div class="social-icon">
+                            <img src="../assets/images/img_linkedin_17x17.svg" alt="LinkedIn">
+                        </div>
+                    </div>
+                    <div class="review-divider"></div>
+                    <div class="review-text">
+                        <p>"Jordyn's designs stand out for their clean aesthetics and ability to communicate powerful messages with simplicity."</p>
+                    </div>
+                </div>
+                
+                <!-- Review Card 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <img src="../assets/images/img_picture.png" alt="Michael Brown">
+                        </div>
+                        <div class="reviewer-info">
+                            <h3 class="reviewer-name">Michael Brown</h3>
+                            <p class="reviewer-title">Senior SEO Specialist</p>
+                        </div>
+                        <div class="social-icon">
+                            <img src="../assets/images/img_linkedin_17x17.svg" alt="LinkedIn">
+                        </div>
+                    </div>
+                    <div class="review-divider"></div>
+                    <div class="review-text">
+                        <p>"Working alongside Jordyn is inspiring—her creativity and passion for design are truly unmatched."</p>
+                    </div>
+                </div>
+                
+                <!-- Review Card 4 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <img src="../assets/images/img_picture.png" alt="Emily Johnson">
+                        </div>
+                        <div class="reviewer-info">
+                            <h3 class="reviewer-name">Emily Johnson</h3>
+                            <p class="reviewer-title">PPC Manager</p>
+                        </div>
+                        <div class="social-icon">
+                            <img src="../assets/images/img_linkedin_17x17.svg" alt="LinkedIn">
+                        </div>
+                    </div>
+                    <div class="review-divider"></div>
+                    <div class="review-text">
+                        <p>"Jordyn's work on my branding project was professional, timely, and absolutely brilliant."</p>
+                    </div>
+                </div>
+                
+                <!-- Review Card 5 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <img src="../assets/images/img_picture.png" alt="Brian Williams">
+                        </div>
+                        <div class="reviewer-info">
+                            <h3 class="reviewer-name">Brian Williams</h3>
+                            <p class="reviewer-title">Social Media Specialist</p>
+                        </div>
+                        <div class="social-icon">
+                            <img src="../assets/images/img_linkedin_17x17.svg" alt="LinkedIn">
+                        </div>
+                    </div>
+                    <div class="review-divider"></div>
+                    <div class="review-text">
+                        <p>"Jordyn has a rare talent for combining bold ideas with modern, minimalist designs that captivate and engage."</p>
+                    </div>
+                </div>
+                
+                <!-- Review Card 6 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <img src="../assets/images/img_picture.png" alt="Sarah Kim">
+                        </div>
+                        <div class="reviewer-info">
+                            <h3 class="reviewer-name">Sarah Kim</h3>
+                            <p class="reviewer-title">Content Creator</p>
+                        </div>
+                        <div class="social-icon">
+                            <img src="../assets/images/img_linkedin_17x17.svg" alt="LinkedIn">
+                        </div>
+                    </div>
+                    <div class="review-divider"></div>
+                    <div class="review-text">
+                        <p>"Her graphic work is not only visually striking but also tells a story that connects on a deeper level."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="see-all-btn" onclick="showMoreReviews()">See all Reviews</button>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <a href="Home.html">
+                <img src="../assets/images/img_clip_path_group.svg" alt="JR Logo" class="footer-logo">
+            </a>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Request Meeting</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">
+                    <img src="../assets/images/img_linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <img src="../assets/images/img_social_icon.svg" alt="Facebook">
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <img src="../assets/images/img_twitter.svg" alt="Twitter">
+                </a>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Function to handle navigation active state
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+        
+        // Function to show more reviews
+        function showMoreReviews() {
+            alert('Loading more reviews...');
+            // In a real implementation, this would load more reviews or navigate to a reviews page
+        }
+    </script>
+</body>
+</html>
