@@ -11,3 +11,631 @@
     <script id="dhws-elementInspector" src="/dhws-web-inspector.js"></script>
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordyn Rushing - Graphic Designer & Digital Artist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Open+Sans:wght@400;700&family=Space+Grotesk&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 100px;
+        }
+        
+        .logo {
+            width: 70px;
+            height: 58px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+        
+        nav a {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            line-height: 28px;
+            color: #000000;
+            text-decoration: none;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 612px;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hero-title {
+            font-family: 'Aboreto', cursive;
+            font-size: 96px;
+            line-height: 111px;
+            color: #d04b4b;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 24px;
+            line-height: 28px;
+            color: #ffffff;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+            margin-bottom: 40px;
+        }
+        
+        .cta-button {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            line-height: 26px;
+            padding: 20px 35px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background-color: #333333;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 50px 100px;
+        }
+        
+        .section-title-container {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .section-title-bg {
+            background-color: #d04b4b;
+            border-radius: 7px;
+            padding: 0 7px;
+            display: inline-block;
+        }
+        
+        .section-title {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 40px;
+            line-height: 47px;
+            color: #000000;
+        }
+        
+        .section-description {
+            font-size: 18px;
+            line-height: 24px;
+            max-width: 738px;
+            margin-bottom: 50px;
+        }
+        
+        .portfolio-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .portfolio-card {
+            width: 310px;
+            height: 310px;
+            border-radius: 45px;
+            border: 1px solid #000000;
+            padding: 46px 50px;
+            position: relative;
+            box-shadow: 0px 5px 0px #191a23;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .freelance-card {
+            background-color: #000000;
+        }
+        
+        .student-card {
+            background-color: #d04b4b;
+        }
+        
+        .card-title-container {
+            position: relative;
+        }
+        
+        .card-title-bg {
+            height: 35px;
+            border-radius: 7px;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .freelance-title-bg {
+            background-color: #d04b4b;
+            width: 257px;
+        }
+        
+        .student-title-bg {
+            background-color: #000000;
+            width: 229px;
+        }
+        
+        .card-title {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 30px;
+            line-height: 36px;
+            position: relative;
+            z-index: 1;
+            padding-left: 7px;
+        }
+        
+        .freelance-title {
+            color: #000000;
+        }
+        
+        .student-title {
+            color: #ffffff;
+        }
+        
+        .see-projects {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+        
+        .see-projects span {
+            font-size: 20px;
+            line-height: 28px;
+        }
+        
+        .freelance-link span {
+            color: #d04b4b;
+        }
+        
+        .student-link span {
+            color: #000000;
+        }
+        
+        /* Reviews Section */
+        .reviews-section {
+            padding: 50px 100px;
+        }
+        
+        .reviews-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+        
+        .reviews-description {
+            font-size: 18px;
+            line-height: 24px;
+            max-width: 473px;
+        }
+        
+        .see-reviews {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+        
+        .see-reviews span {
+            font-size: 20px;
+            line-height: 28px;
+            color: #000000;
+        }
+        
+        .testimonials-container {
+            background-color: #000000;
+            border-radius: 45px;
+            padding: 84px 50px 50px;
+            position: relative;
+            height: 625px;
+        }
+        
+        .testimonial-carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .testimonial {
+            width: 100%;
+            display: none;
+            position: relative;
+        }
+        
+        .testimonial.active {
+            display: block;
+        }
+        
+        .testimonial-bubble {
+            position: relative;
+            width: 606px;
+            height: 266px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-text {
+            position: absolute;
+            top: 48px;
+            left: 52px;
+            width: 502px;
+            font-size: 18px;
+            line-height: 24px;
+            color: #ffffff;
+        }
+        
+        .testimonial-author {
+            position: absolute;
+            bottom: -104px;
+            left: 80px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            line-height: 22px;
+            color: #ffffff;
+        }
+        
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+            padding: 0 50px;
+        }
+        
+        .carousel-arrow {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            gap: 33px;
+        }
+        
+        .indicator {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+        
+        .indicator.active {
+            background-color: #d04b4b;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            width: 71px;
+            height: 63px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .footer-nav a {
+            font-size: 20px;
+            line-height: 28px;
+            color: #000000;
+            text-decoration: none;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-link {
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .social-icon {
+            width: 15px;
+            height: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <a href="Home.html" class="logo-link">
+                <img src="../assets/images/img_clip_path_group.svg" alt="JR Logo" class="logo">
+            </a>
+            <!-- Update the navigation links to proper relative paths -->
+            <nav>
+    <a href="About me .html">About Me</a>
+    <a href="Portfolio.html">Portfolio</a>
+    <a href="#">Client Reviews</a>
+    <a href="#">Contacts</a>
+</nav>
+        </header>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="../assets/images/img_image_5.png" alt="Jordyn Rushing Portrait" class="hero-image">
+            <div class="hero-content">
+                <h1 class="hero-title">JORDYN RUSHING</h1>
+                <h2 class="hero-subtitle">GRAPHIC DESIGNS & DIGITAL ARTIST</h2>
+                <a href="#" class="cta-button">Request Custom Design</a>
+            </div>
+        </section>
+        
+        <!-- Portfolio Section -->
+        <section class="portfolio-section">
+            <div class="section-title-container">
+                <div class="section-title-bg">
+                    <h2 class="section-title">Portfolio</h2>
+                </div>
+            </div>
+            <p class="section-description">
+                Listed below are my freelance projects that have been commissioned from companies and agencies all over the country. Some of my undergrad projects I have done at the LSU School of Art while pursuing my degree in Graphic Design are presented as well.
+            </p>
+            
+            <!-- Portfolio Section - Update the "See Projects" links to navigate to Portfolio.html instead of using JavaScript alerts -->
+<div class="portfolio-cards">
+    <div class="portfolio-card freelance-card">
+        <div class="card-title-container">
+            <div class="card-title-bg freelance-title-bg"></div>
+            <h3 class="card-title freelance-title">Freelance Works</h3>
+        </div>
+        <a href="Portfolio.html" class="see-projects freelance-link">
+            <img src="../assets/images/img_icon.svg" alt="Arrow icon">
+            <span>See Projects</span>
+        </a>
+    </div>
+    
+    <div class="portfolio-card student-card">
+        <div class="card-title-container">
+            <div class="card-title-bg student-title-bg"></div>
+            <h3 class="card-title student-title">Student Works</h3>
+        </div>
+        <a href="Portfolio.html" class="see-projects student-link">
+            <img src="../assets/images/img_icon_41x41.svg" alt="Arrow icon">
+            <span>See Projects</span>
+        </a>
+    </div>
+</div>
+        </section>
+        
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="reviews-header">
+                <div class="section-title-container">
+                    <div class="section-title-bg">
+                        <h2 class="section-title">Client Reviews</h2>
+                    </div>
+                </div>
+                <p class="reviews-description">
+                    Hear from Satisfied Clients: Read Testimonials to Learn More about My Services
+                </p>
+                <a href="#" class="see-reviews">
+                    <img src="../assets/images/img_icon.svg" alt="Arrow icon">
+                    <span>See Verified Reviews</span>
+                </a>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-carousel">
+                    <div class="testimonial active">
+                        <div class="testimonial-bubble">
+                            <img src="../assets/images/img_bubble.svg" alt="Speech bubble">
+                            <p class="testimonial-text">
+                                She seamlessly blended geometric elements with bold typography, creating a logo that is both timeless and fresh. Her ability to capture the essence of my vision and translate it into visual art is unmatched. The final deliverables were polished, on-brand, and exceeded my expectations.
+                            </p>
+                            <p class="testimonial-author">
+                                John Smith<br>
+                                Marketing Director at XYZ Corp
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-bubble">
+                            <img src="../assets/images/img_bubble.svg" alt="Speech bubble">
+                            <p class="testimonial-text">
+                                I had the absolute pleasure of working with Jordyn T. Rushing on a branding project, and I was blown away by her creativity and professionalism. Her modern, minimalist approach was exactly what my brand needed to stand out. Jordyn has an incredible eye for detail and a knack for weaving storytelling into her designs, which gave my project a unique edge.
+                            </p>
+                            <p class="testimonial-author">
+                                John Smith<br>
+                                Marketing Director at XYZ Corp
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-bubble">
+                            <img src="../assets/images/img_bubble.svg" alt="Speech bubble">
+                            <p class="testimonial-text">
+                                Jordyn's communication throughout the process was stellar. She took feedback gracefully and always came back with thoughtful solutions that enhanced the original concept. If you're looking for a designer who truly understands how to connect with your audience and elevate your brand, Jordyn is the one to call.
+                            </p>
+                            <p class="testimonial-author">
+                                John Smith<br>
+                                Marketing Director at XYZ Corp
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-arrow prev-arrow">
+                        <img src="../assets/images/img_arrow_left.svg" alt="Previous">
+                    </button>
+                    
+                    <div class="carousel-indicators">
+                        <div class="indicator active"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                    </div>
+                    
+                    <button class="carousel-arrow next-arrow">
+                        <img src="../assets/images/img_arrow_right.svg" alt="Next">
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <a href="Home.html" class="footer-logo-link">
+                <img src="../assets/images/img_clip_path_group.svg" alt="JR Logo" class="footer-logo">
+            </a>
+            
+            <!-- Update footer navigation links -->
+            <div class="footer-nav">
+                <a href="About me .html">About Me</a>
+                <a href="#">Request Meeting</a>
+                <a href="#">Contacts</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <img src="../assets/images/img_linkedin.svg" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="#" class="social-link">
+                    <img src="../assets/images/img_social_icon.svg" alt="Facebook" class="social-icon">
+                </a>
+                <a href="#" class="social-link">
+                    <img src="../assets/images/img_twitter.svg" alt="Twitter" class="social-icon">
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Update the JavaScript to remove the alert for portfolio links since we're now using direct navigation -->
+<script>
+    // Testimonial Carousel Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const testimonials = document.querySelectorAll('.testimonial');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevArrow = document.querySelector('.prev-arrow');
+        const nextArrow = document.querySelector('.next-arrow');
+        let currentIndex = 0;
+        
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            indicators[index].classList.add('active');
+            currentIndex = index;
+        }
+        
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showTestimonial(index);
+            });
+        });
+        
+        prevArrow.addEventListener('click', () => {
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) newIndex = testimonials.length - 1;
+            showTestimonial(newIndex);
+        });
+        
+        nextArrow.addEventListener('click', () => {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= testimonials.length) newIndex = 0;
+            showTestimonial(newIndex);
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= testimonials.length) newIndex = 0;
+            showTestimonial(newIndex);
+        }, 5000);
+    });
+    
+    // Request Custom Design Button
+    const requestButton = document.querySelector('.cta-button');
+    requestButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Thank you for your interest! Please fill out the contact form and I will get back to you shortly with custom design options.');
+    });
+    
+    // Portfolio Links - Remove the event listeners as we're now using direct navigation
+    // No JavaScript needed for the portfolio links as they now use href navigation
+    
+    // Reviews Link
+    const reviewsLink = document.querySelector('.see-reviews');
+    reviewsLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('This would navigate to a page with all verified client reviews and testimonials.');
+    });
+</script>
+</body>
+</html>
